@@ -1,3 +1,5 @@
+!\[CodeGuard Tests](https://github.com/srivatsacm92-gif/CodeGuard/actions/workflows/tests.yml/badge.svg)
+
 \# CodeGuard 🔐
 
 
