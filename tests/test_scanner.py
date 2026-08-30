@@ -3,6 +3,7 @@ import tempfile
 import unittest
 
 from scanner.scanner import CodeScanner
+from main import find_python_files
 
 
 class TestCodeScanner(unittest.TestCase):
@@ -89,6 +90,30 @@ cursor.execute(query, (username,))
 
         finally:
             os.remove(file_path)
+
+    def test_directory_scanning(self):
+
+        with tempfile.TemporaryDirectory() as directory:
+
+            file1 = os.path.join(directory, "file1.py")
+            file2 = os.path.join(directory, "file2.py")
+            text_file = os.path.join(directory, "notes.txt")
+
+            with open(file1, "w", encoding="utf-8") as file:
+                file.write("password = 'secret123'\n")
+
+            with open(file2, "w", encoding="utf-8") as file:
+                file.write("result = eval('2 + 2')\n")
+
+            with open(text_file, "w", encoding="utf-8") as file:
+                file.write("This is not Python.\n")
+
+            python_files = find_python_files(directory)
+
+            self.assertEqual(len(python_files), 2)
+            self.assertIn(file1, python_files)
+            self.assertIn(file2, python_files)
+            self.assertNotIn(text_file, python_files)
 
 
 if __name__ == "__main__":
