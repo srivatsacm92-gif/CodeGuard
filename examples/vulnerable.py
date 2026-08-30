@@ -22,3 +22,9 @@ query = "SELECT * FROM users WHERE username = '" + username + "'"
 
 cursor.execute(query)
 password_from_function = get_password()
+
+safe_username = input("Enter username safely: ")
+
+safe_query = "SELECT * FROM users WHERE username = ?"
+
+cursor.execute(safe_query, (safe_username,))
