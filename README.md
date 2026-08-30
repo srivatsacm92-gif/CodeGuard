@@ -1,12 +1,24 @@
-\# CodeGuard
+\# CodeGuard 🔐
 
 
 
-CodeGuard is a Python-based static code vulnerability scanner that analyzes Python source code without executing it.
+\### Python Static Code Vulnerability Scanner
 
 
 
-\## Features
+CodeGuard is a Python-based static code analysis tool that scans Python source code for potentially insecure coding patterns without executing the target program.
+
+
+
+The project uses Python's Abstract Syntax Tree (AST) to inspect source code and generate security findings with severity, line numbers, descriptions, and remediation recommendations.
+
+
+
+\---
+
+
+
+\## 🚀 Features
 
 
 
@@ -24,77 +36,127 @@ CodeGuard is a Python-based static code vulnerability scanner that analyzes Pyth
 
 \- Severity classification
 
-\- Line-number reporting
+\- Exact line-number reporting
 
 \- Security recommendations
 
-\- Terminal security reports
+\- Command-line file scanning
 
 \- JSON report generation
 
-\- Command-line file scanning
+\- Input validation and error handling
 
-\- Automated unit testing
+\- Automated unit tests
 
 \- Basic false-positive reduction
 
 
 
-\## Technologies Used
+\---
 
 
 
-\- Python
-
-\- Abstract Syntax Tree (AST)
-
-\- Object-Oriented Programming
-
-\- Static Code Analysis
-
-\- JSON
-
-\- Unit Testing
+\## 🛠️ Technologies
 
 
 
-\## How It Works
+\- \*\*Python\*\*
+
+\- \*\*AST (Abstract Syntax Tree)\*\*
+
+\- \*\*Object-Oriented Programming\*\*
+
+\- \*\*Static Code Analysis\*\*
+
+\- \*\*JSON\*\*
+
+\- \*\*Unit Testing\*\*
+
+\- \*\*Git \& GitHub\*\*
 
 
 
-CodeGuard parses Python source code into an Abstract Syntax Tree (AST).
+\---
 
 
 
-The scanner analyzes the structure of the code using security rules and identifies potentially vulnerable patterns.
+\## 🔍 Vulnerabilities Detected
 
 
 
-The detected issues are then presented with:
+| Vulnerability | Severity |
+
+|---|---|
+
+| Hardcoded Secrets | HIGH |
+
+| `eval()` / `exec()` | HIGH |
+
+| `os.system()` Command Injection Risk | HIGH |
+
+| SQL Injection Risk | HIGH |
+
+| MD5 / SHA1 Weak Cryptography | MEDIUM |
 
 
 
-\- Vulnerability type
-
-\- Severity
-
-\- Line number
-
-\- Description
-
-\- Recommended remediation
+\---
 
 
 
-\## Usage
+\## ⚙️ How It Works
 
 
 
-Run CodeGuard from the project directory:
+```text
 
+Python Source Code
 
+&#x20;       │
 
-```bash
+&#x20;       ▼
 
-python main.py examples\\vulnerable.py
+&#x20;  AST Parser
+
+&#x20;       │
+
+&#x20;       ▼
+
+Security Detection Rules
+
+&#x20;       │
+
+&#x20;       ├── Hardcoded Secrets
+
+&#x20;       ├── Dangerous Functions
+
+&#x20;       ├── Command Injection
+
+&#x20;       ├── SQL Injection
+
+&#x20;       └── Weak Cryptography
+
+&#x20;       │
+
+&#x20;       ▼
+
+&#x20;Security Findings
+
+&#x20;       │
+
+&#x20;       ▼
+
+Severity + Line Number
+
+&#x20;       │
+
+&#x20;       ▼
+
+Recommendations
+
+&#x20;       │
+
+&#x20;       ├── Terminal Report
+
+&#x20;       └── JSON Report
 
